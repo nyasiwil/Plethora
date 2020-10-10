@@ -1,0 +1,72 @@
+﻿@model Plethora.Models.Articles
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Articles</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Image
+        </dt>
+        <dd>
+            <img src="\Assets\Articles\@Html.DisplayFor(model => model.ArticleId)\main.jpg" class="img-fluid" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Intro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Intro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ByLine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ByLine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BodyCopy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BodyCopy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateUpdated)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateUpdated)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ArticleType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ArticleType.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ArticleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

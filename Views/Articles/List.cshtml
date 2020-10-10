@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Plethora.Models.Articles>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    Check out our latest articles!
+</p>
+@foreach (var item in Model)
+{
+
+    <div class="row">
+        <div class="col-sm-2"> <img src="\Assets\Articles\@item.ArticleId\main.jpg" width="150" /></div>
+        <div class="col-sm-10">
+            
+            <div>
+            <h6>  
+            @Html.DisplayFor(modelItem => item.ArticleType.Title)
+            </h6>
+            </div>
+
+
+            <div>
+            <h3>
+            <a asp-action="Info" asp-route-id="@item.ArticleId">@item.Title</a>
+            </h3>
+            </div>
+
+            <div>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+            </div>
+
+            <div>
+            @item.BodyCopy.Substring(0, Math.Min(item.BodyCopy.Length, 100)) &nbsp;
+                <a asp-action="Info" asp-route-id="@item.ArticleId">Read More</a>
+            </div>
+
+        </div>
+
+    </div>
+}
+    

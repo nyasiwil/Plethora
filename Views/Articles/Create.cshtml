@@ -1,0 +1,67 @@
+﻿@model Plethora.Models.Articles
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Articles</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ArticleTypeId" class="control-label"></label>
+                <select asp-for="ArticleTypeId" class="form-control" asp-items="ViewBag.ArticleTypeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Intro" class="control-label"></label>
+                <input asp-for="Intro" class="form-control" />
+                <span asp-validation-for="Intro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ByLine" class="control-label"></label>
+                <input asp-for="ByLine" class="form-control" />
+                <span asp-validation-for="ByLine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyCopy" class="control-label"></label>
+                <input asp-for="BodyCopy" class="form-control" />
+                <span asp-validation-for="BodyCopy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusId" class="control-label"></label>
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateUpdated" class="control-label"></label>
+                <input asp-for="DateUpdated" class="form-control" />
+                <span asp-validation-for="DateUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
